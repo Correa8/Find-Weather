@@ -2,7 +2,7 @@ import React from 'react';
 import Loader from './Loader';
 import axios from 'axios';
 
-const Weather = ({ location, setLocation, gradesCel, setGradesCel }) => {
+const Weather = ({ location, setLocation, gradesCel, setGradesCel, handle }) => {
   const getWeatherByCountry = async (value) => {
     const res = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=1d4407cd8e297ed94b328101b6d05461`,
@@ -33,7 +33,7 @@ const Weather = ({ location, setLocation, gradesCel, setGradesCel }) => {
                 <div className="top">
                   <div className="location">
                     <p>
-                      {location?.name}, {location.sys.country}{' '}
+                      {location?.name}, {location.sys.country }{' '}
                     </p>
                   </div>
                   <div className="container__temp">

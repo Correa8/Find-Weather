@@ -3,6 +3,7 @@ import './app.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Weather from './components/Weather';
+import Loader from './components/Loader';
 
 const App = () => {
   const [latitude, setLatitude] = useState(null);
@@ -28,14 +29,27 @@ const App = () => {
       getWeather();
     }
   }, [latitude]);
+
+  const imagesFond = 'fond1.gif';
+
+  document.body.style = `background: url("./${imagesFond}");
+  background-position:center;
+         background-size:cover;
+         background-repeat:no-repeat`;
   return (
     <>
-      <Weather
-        location={location}
-        setLocation={setLocation}
-        gradesCel={gradesCel}
-        setGradesCel={setGradesCel}
-      />
+      {!location ? (
+        <Loader />
+      ) : (
+        <>
+          <Weather
+            location={location}
+            setLocation={setLocation}
+            gradesCel={gradesCel}
+            setGradesCel={setGradesCel}
+          />
+        </>
+      )}
     </>
   );
 };
