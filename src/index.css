@@ -2,12 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
-
-*{
-  margin: 0;
-  padding: 0;
+img {
+  overflow: hidden;
+  height: 41rem;
+  width: 100rem;
 }
 
-body{
-  background-color:rgb(28, 28, 65);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+p {
+  font-size: 1.6rem;
+}
+h2 {
+  font-size: 5rem;
+}
+.all {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+.all:before {
+  content: '';
+  background: url('/clima2.jpg') no-repeat center center/cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.container {
+  max-width: 700px;
+  height: 500px;
+  margin: auto;
+  padding: 0 1rem;
+  position: relative;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.all .top {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.all .description {
+  position: relative;
+  right: -60%;
+  transform-origin: 0 0;
+  transform: rotate(270deg);
+  flex-direction: column;
+}
+.description img {
+  transform: rotate(-270deg);
+}
+
+.all .botton {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 0.7rem;
+  border-radius: 12px;
+  background-color: rgba(158, 155, 155, 0.356);
+}
+form {
+  gap: 30px;
+}
+.all .impu {
+  text-align: center;
+  padding: 1rem;
+}
+.all input {
+  padding: 0.7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  color: #f8f8f8;
 }
